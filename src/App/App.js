@@ -1,11 +1,15 @@
 import React from 'react';
 
+/* styles **/
 import styles from './App.less';
+
+/* components **/
+import Auth from './Auth/Auth';
 
 export const App = () => {
     return (
-        <div className={`${styles.hello} world`}>
-            Hello World - Client Starter - By Mojo Coding
+        <div className={styles.app}>
+            <Auth />
         </div>
     );
 }
