@@ -9,6 +9,7 @@ import Auth from './Auth/Auth';
 export const App = () => {
     return (
         <div className={styles.app}>
+            <h1>Client Starter</h1>
             <Auth />
         </div>
     );

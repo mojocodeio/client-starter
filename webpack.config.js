@@ -1,3 +1,6 @@
+// -- configuring proxy -- //
+// https://webpack.js.org/configuration/dev-server/#devserverproxy
+
 const path = require('path');
 
 // -- plugins -- //
@@ -17,6 +20,15 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
+    },
+    devServer: {
+        proxy: {
+            '/api/*': {
+                target: 'http://localhost:3001',
+                secure: false,
+                pathRewrite: { '^/api' : '' }
+            }
+        },
     },
     module: {
         rules: [
