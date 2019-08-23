@@ -1,12 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
 
 import App from './App/App';
 
-ReactDOM.render(
-    <App />,
+const config = {};
+
+const configReducer = (state = config, action) => {
+    switch(action.type) {
+        default:
+            return state;
+    }
+};
+
+const rootReducer = combineReducers({
+    config: configReducer,
+});
+
+
+const store = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
-)
+);
 
 /*
     TODO:
