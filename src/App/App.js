@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './App.less';
+import styles from './App.less';
 
 export const App = () => {
     return (
-        <div className={'hello'}>
-            Hello World - Client Starter - By Mojo Coding and Cozzone
+        <div className={`${styles.hello} world`}>
+            Hello World - Client Starter - By Mojo Coding
         </div>
     );
 }
